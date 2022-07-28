@@ -181,14 +181,6 @@ if app_mode =='Object Detection':
 
         new_df['tags'][0]
 
-## marine changed to marin
-## unique to uniqu
-
-"""How to deal with this nlp text??
-So what we will do is combine all the tags, find the most used 5000 words.
-Then for each movie tag, see how many time the words are repeated among the 5000 most common, basically we are creating a bag of words.
-In this way it will help us to club the same movies togethere
-"""
 
         from sklearn.feature_extraction.text import CountVectorizer
         cv = CountVectorizer(max_features=5000,stop_words='english')
@@ -234,16 +226,11 @@ In this way it will help us to club the same movies togethere
         index = new_df[new_df['title']=='Batman Begins'].index[0]
 
 
-sorted(similarity[index],reverse=True)
+        sorted(similarity[index],reverse=True)
 ## but index is not being shown
 
-sorted(list(enumerate(similarity[0])),reverse=True, key = lambda x:x[1])
-## index values also shown
-## and also sorted on the basis of the second values and not on the index values
+        sorted(list(enumerate(similarity[0])),reverse=True, key = lambda x:x[1])
 
-## recommendation function
-## find the similarity vector in the similarity object for the particular movie
-## and the 5 least distanced will be the movies similar to it
 
         def recommend(movie):
             index = new_df[new_df['title']==movie].index[0]
@@ -251,4 +238,3 @@ sorted(list(enumerate(similarity[0])),reverse=True, key = lambda x:x[1])
             for i in distance[1:11]:
                 print(new_df.iloc[i[0]].title)
         st.text(recommend(url_file))
-
