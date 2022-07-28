@@ -168,17 +168,17 @@ if app_mode =='Object Detection':
 
         
 
-        def stem(text):
-            y = []
+        #def stem(text):
+         #   y = []
     
-            for i in text.split():
-                y.append(ps.stem(i))
+          #  for i in text.split():
+           #     y.append(ps.stem(i))
         
-            return (" ".join(y))
+            #return (" ".join(y))
 
-        new_df['tags'] = new_df['tags'].apply(stem)
+        #new_df['tags'] = new_df['tags'].apply(stem)
 
-        new_df['tags'][0]
+#        new_df['tags'][0]
 
 
         from sklearn.feature_extraction.text import CountVectorizer
