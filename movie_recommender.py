@@ -15,8 +15,6 @@ from io import BytesIO
 from PIL import Image
 from PIL import ImageDraw
 import json
-import pandas as pd
-import sklearn
 
 st.set_page_config(layout="wide")
 
@@ -167,19 +165,21 @@ if app_mode =='Object Detection':
 ## we need to stem the whole tags thing
 ## since dance same as dancing but treated as 2 diff entities
 
-        
+        import nltk 
+        from nltk.stem.porter import PorterStemmer
+        ps = PorterStemmer()
 
-        #def stem(text):
-         #   y = []
+        def stem(text):
+            y = []
     
-          #  for i in text.split():
-           #     y.append(ps.stem(i))
+            for i in text.split():
+                y.append(ps.stem(i))
         
-            #return (" ".join(y))
+            return (" ".join(y))
 
-        #new_df['tags'] = new_df['tags'].apply(stem)
+        new_df['tags'] = new_df['tags'].apply(stem)
 
-#        new_df['tags'][0]
+        new_df['tags'][0]
 
 
         from sklearn.feature_extraction.text import CountVectorizer
