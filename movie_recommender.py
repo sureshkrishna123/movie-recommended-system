@@ -166,9 +166,7 @@ if app_mode =='Object Detection':
 ## we need to stem the whole tags thing
 ## since dance same as dancing but treated as 2 diff entities
 
-        import nltk 
-        from nltk.stem.porter import PorterStemmer
-        ps = PorterStemmer()
+        
 
         def stem(text):
             y = []
