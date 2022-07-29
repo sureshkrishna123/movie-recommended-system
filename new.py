@@ -137,7 +137,7 @@ if app_mode =='Object Detection':
 
         
         st.text("Recommendations for"+url_file)
-        print(get_recommendations(url_file))
+        st.text(get_recommendations(url_file))
 
 
         
