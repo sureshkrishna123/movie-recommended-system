@@ -9,6 +9,7 @@ import uuid
 import requests
 from urllib.parse import urlparse
 from io import BytesIO
+import numpy as np
 # To install this module, run:
 # python -m pip install Pillow
 from io import BytesIO
