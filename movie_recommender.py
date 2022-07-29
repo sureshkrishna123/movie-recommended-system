@@ -55,10 +55,10 @@ if app_mode =='Object Detection':
         creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
         movies = pd.read_csv(moviepath, error_bad_lines=False)
         credits = pd.read_csv(creditpath, error_bad_lines=False)
-        movies.shape, credits.shape
+       
 
         movies = movies.merge(credits,on='title')
-        movies.shape
+      
 
 
         movies = movies[['movie_id','title','overview','genres','keywords','cast','crew']]
@@ -238,4 +238,4 @@ if app_mode =='Object Detection':
             distance = sorted(list(enumerate(similarity[index])),reverse=True, key = lambda x:x[1])
             for i in distance[1:11]:
                 print(new_df.iloc[i[0]].title)
-        st.text(recommend(url_file))
+        print(recommend(url_file))
