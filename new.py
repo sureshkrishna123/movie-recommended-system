@@ -15,6 +15,7 @@ from io import BytesIO
 from PIL import Image
 from PIL import ImageDraw
 import json
+import pandas as pd
 
 st.set_page_config(layout="wide")
 
