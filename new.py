@@ -56,7 +56,7 @@ if app_mode =='Object Detection':
         movies_df = pd.read_csv(moviepath, error_bad_lines=False)
         credits_df = pd.read_csv(creditpath, error_bad_lines=False)
         credits_df.columns = ['id','title','cast','crew']
-        movies_df = movies_df.merge(credits, on="id")
+        movies_df = movies_df.merge(credits_df, on="id")
         
         from ast import literal_eval
         features = ["cast", "crew", "keywords", "genres"]
