@@ -58,6 +58,7 @@ if app_mode =='Object Detection':
         credits_df = pd.read_csv(creditpath, error_bad_lines=False)
         credits_df.columns = ['id','title','cast','crew']
         movies_df = movies_df.merge(credits_df, on="id")
+        movies_df.rename(columns = {'original_title':'title'}, inplace = True)
         
         from ast import literal_eval
         features = ["cast", "crew", "keywords", "genres"]
@@ -113,7 +114,7 @@ if app_mode =='Object Detection':
         count_vectorizer = CountVectorizer(stop_words="english")
         count_matrix = count_vectorizer.fit_transform(movies_df["soup"])
 
-        cosine_sim2 = cosine_similarity(count_matrix, count_matrix) 
+        cosine_sim = cosine_similarity(count_matrix, count_matrix) 
 
 
         movies_df = movies_df.reset_index()
@@ -126,7 +127,7 @@ if app_mode =='Object Detection':
           idx = indices[title]
           similarity_scores = list(enumerate(cosine_sim[idx]))
           similarity_scores= sorted(similarity_scores, key=lambda x: x[1], reverse=True)
-          similarity_scores= sim_scores[1:11]
+          similarity_scores= similarity_scores[1:11]
     # (a, b) where a is id of movie, b is similarity_scores
 
           movies_indices = [ind[0] for ind in similarity_scores]
@@ -135,8 +136,8 @@ if app_mode =='Object Detection':
 
 
         
-        st.text("Recommendations for The Dark Knight Rises")
-        print(get_recommendations(url_file), cosine_sim2)
+        st.text("Recommendations for"+url_file)
+        print(get_recommendations(url_file))
 
 
         
