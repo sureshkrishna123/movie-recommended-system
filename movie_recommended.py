@@ -94,8 +94,7 @@ if app_mode =='Movie Recommended System':
                     names = names[:3]
 
                 return names
-
-            return [] 
+               return [] 
 
 
             movies_df["director"] = movies_df["crew"].apply(get_director)
