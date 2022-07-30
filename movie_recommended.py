@@ -148,12 +148,16 @@ if app_mode =='Movie Recommended System':
               movies = movies_df["title"].iloc[movies_indices]
               return movies
 
-
-        
-            st.text("Recommendations for "+Movie_name)
-            st.text(get_recommendations(Movie_name))
-            st.text("##########################")
-            st.text("Enjoy the movie :)")
+            if Movie_name is None:
+                st.text("Recommendations for "+select)
+                st.text(get_recommendations(select))
+                st.text("##########################")
+                st.text("Enjoy the movie :)")
+            else:
+                st.text("Recommendations for "+Movie_name)
+                st.text(get_recommendations(Movie_name))
+                st.text("##########################")
+                st.text("Enjoy the movie :)")
 
     if mode=='By Genre':
 
