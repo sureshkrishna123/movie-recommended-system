@@ -69,6 +69,9 @@ if app_mode =='Movie Recommended System':
         button_movie=st.button('Click me',help='To suggest a relevant movie')
        
         if (button_movie and select) or (button_movie and Movie_name):
+            with st.spinner('Wait for it...'):
+                time.sleep(10)
+
             bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
             moviepath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_movies.csv'
             creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
