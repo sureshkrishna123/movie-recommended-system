@@ -52,23 +52,23 @@ if app_mode =='About Me':
 if app_mode =='Movie Recommended System':
     
     
-            st.markdown("<h1 style='text-align: center; color: skyblue; '> Movie Recommended System </h1>", unsafe_allow_html=True)
-            st.image(os.path.join('./images','Screenshot (85).png'),use_column_width=True )
-            st.title("Movie Recommended System")
+    st.markdown("<h1 style='text-align: center; color: skyblue; '> Movie Recommended System </h1>", unsafe_allow_html=True)
+    st.image(os.path.join('./images','Screenshot (85).png'),use_column_width=True )
+    st.title("Movie Recommended System")
 
-            st.markdown("It will suggest you the relevant movie.")
-            st.text("Note: In this Data contains only 5000 Movie names. If you enter the name not in this 5000, it will show you an error")
-    #mode = st.radio(
-    #"",
-    #("By Movie Name","By Genre"),
-    #)
-    #if mode=='By Movie Name':
-        #st.text("Select a Movie Or Give Movie Name")
-        #select=st.selectbox("select a Movie",['Avatar', "Pirates of the Caribbean: At World's End", 'Spectre', 'The Dark Knight Rises', 'John Carter', 'Spider-Man 3', 'Tangled', 'Avengers: Age of Ultron', 'Harry Potter and the Half-Blood Prince', 'Batman v Superman: Dawn of Justice', 'Superman Returns', 'Quantum of Solace', "Pirates of the Caribbean: Dead Man's Chest", 'The Lone Ranger', 'Man of Steel', 'The Chronicles of Narnia: Prince Caspian', 'The Avengers', 'Pirates of the Caribbean: On Stranger Tides', 'Men in Black 3', 'The Hobbit: The Battle of the Five Armies', 'The Amazing Spider-Man', 'Robin Hood', 'The Hobbit: The Desolation of Smaug', 'The Golden Compass', 'King Kong', 'Titanic', 'Captain America: Civil War', 'Battleship', 'Jurassic World', 'Skyfall', 'Spider-Man 2', 'Iron Man 3', 'Alice in Wonderland', 'X-Men: The Last Stand', 'Monsters University', 'Transformers: Revenge of the Fallen', 'Transformers: Age of Extinction', 'Oz: The Great and Powerful', 'The Amazing Spider-Man 2', 'TRON: Legacy', 'Cars 2', 'Green Lantern', 'Toy Story 3', 'Terminator Salvation', 'Furious 7', 'World War Z', 'X-Men: Days of Future Past', 'Star Trek Into Darkness', 'Jack the Giant Slayer', 'The Great Gatsby', 'Prince of Persia: The Sands of Time', 'Pacific Rim', 'Transformers: Dark of the Moon', 'Indiana Jones and the Kingdom of the Crystal Skull', 'The Good Dinosaur', 'Brave', 'Star Trek Beyond', 'WALL·E', 'Rush Hour 3', '2012', 'A Christmas Carol', 'Jupiter Ascending', 'The Legend of Tarzan', 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe', 'X-Men: Apocalypse'],key=1)
-        #Movie_name = st.text_input('Type the movie name')
-        #button_movie=st.button('Click me',help='To suggest a relevant movie')
+    st.markdown("It will suggest you the relevant movie.")
+    st.text("Note: In this Data contains only 5000 Movie names. If you enter the name not in this 5000, it will show you an error")
+    mode = st.radio(
+    "",
+    ("By Movie Name","By Genre"),
+    )
+    if mode=='By Movie Name':
+        st.text("Select a Movie Or Give Movie Name")
+        select=st.selectbox("select a Movie",['Avatar', "Pirates of the Caribbean: At World's End", 'Spectre', 'The Dark Knight Rises', 'John Carter', 'Spider-Man 3', 'Tangled', 'Avengers: Age of Ultron', 'Harry Potter and the Half-Blood Prince', 'Batman v Superman: Dawn of Justice', 'Superman Returns', 'Quantum of Solace', "Pirates of the Caribbean: Dead Man's Chest", 'The Lone Ranger', 'Man of Steel', 'The Chronicles of Narnia: Prince Caspian', 'The Avengers', 'Pirates of the Caribbean: On Stranger Tides', 'Men in Black 3', 'The Hobbit: The Battle of the Five Armies', 'The Amazing Spider-Man', 'Robin Hood', 'The Hobbit: The Desolation of Smaug', 'The Golden Compass', 'King Kong', 'Titanic', 'Captain America: Civil War', 'Battleship', 'Jurassic World', 'Skyfall', 'Spider-Man 2', 'Iron Man 3', 'Alice in Wonderland', 'X-Men: The Last Stand', 'Monsters University', 'Transformers: Revenge of the Fallen', 'Transformers: Age of Extinction', 'Oz: The Great and Powerful', 'The Amazing Spider-Man 2', 'TRON: Legacy', 'Cars 2', 'Green Lantern', 'Toy Story 3', 'Terminator Salvation', 'Furious 7', 'World War Z', 'X-Men: Days of Future Past', 'Star Trek Into Darkness', 'Jack the Giant Slayer', 'The Great Gatsby', 'Prince of Persia: The Sands of Time', 'Pacific Rim', 'Transformers: Dark of the Moon', 'Indiana Jones and the Kingdom of the Crystal Skull', 'The Good Dinosaur', 'Brave', 'Star Trek Beyond', 'WALL·E', 'Rush Hour 3', '2012', 'A Christmas Carol', 'Jupiter Ascending', 'The Legend of Tarzan', 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe', 'X-Men: Apocalypse'],key=1)
+        Movie_name = st.text_input('Type the movie name')
+        button_movie=st.button('Click me',help='To suggest a relevant movie')
        
-      #  if (button_movie and select) or (button_movie and Movie_name):
+        if (button_movie and select) or (button_movie and Movie_name):
             bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
             moviepath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_movies.csv'
             creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
@@ -148,17 +148,9 @@ if app_mode =='Movie Recommended System':
               movies_indices = [ind[0] for ind in similarity_scores]
               movies = movies_df["title"].iloc[movies_indices]
               return movies
-            mode = st.radio(
-            "",
-            ("By Movie Name","By Genre"),
-            )
+           
             if mode=='By Movie Name':
-                st.text("Select a Movie Or Give Movie Name")
-                select=st.selectbox("select a Movie",['Avatar', "Pirates of the Caribbean: At World's End", 'Spectre', 'The Dark Knight Rises', 'John Carter', 'Spider-Man 3', 'Tangled', 'Avengers: Age of Ultron', 'Harry Potter and the Half-Blood Prince', 'Batman v Superman: Dawn of Justice', 'Superman Returns', 'Quantum of Solace', "Pirates of the Caribbean: Dead Man's Chest", 'The Lone Ranger', 'Man of Steel', 'The Chronicles of Narnia: Prince Caspian', 'The Avengers', 'Pirates of the Caribbean: On Stranger Tides', 'Men in Black 3', 'The Hobbit: The Battle of the Five Armies', 'The Amazing Spider-Man', 'Robin Hood', 'The Hobbit: The Desolation of Smaug', 'The Golden Compass', 'King Kong', 'Titanic', 'Captain America: Civil War', 'Battleship', 'Jurassic World', 'Skyfall', 'Spider-Man 2', 'Iron Man 3', 'Alice in Wonderland', 'X-Men: The Last Stand', 'Monsters University', 'Transformers: Revenge of the Fallen', 'Transformers: Age of Extinction', 'Oz: The Great and Powerful', 'The Amazing Spider-Man 2', 'TRON: Legacy', 'Cars 2', 'Green Lantern', 'Toy Story 3', 'Terminator Salvation', 'Furious 7', 'World War Z', 'X-Men: Days of Future Past', 'Star Trek Into Darkness', 'Jack the Giant Slayer', 'The Great Gatsby', 'Prince of Persia: The Sands of Time', 'Pacific Rim', 'Transformers: Dark of the Moon', 'Indiana Jones and the Kingdom of the Crystal Skull', 'The Good Dinosaur', 'Brave', 'Star Trek Beyond', 'WALL·E', 'Rush Hour 3', '2012', 'A Christmas Carol', 'Jupiter Ascending', 'The Legend of Tarzan', 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe', 'X-Men: Apocalypse'],key=1)
-                Movie_name = st.text_input('Type the movie name')
-                button_movie=st.button('Click me',help='To suggest a relevant movie')
-       
-                if (button_movie and select) or (button_movie and Movie_name):  
+            
                     if Movie_name:
                         st.text("Recommendations for "+Movie_name)
                         st.text(get_recommendations(Movie_name))
@@ -170,8 +162,8 @@ if app_mode =='Movie Recommended System':
                         st.text("##########################")
                         st.text("Enjoy the movie :)")                       
 
-            if mode=='By Genre':
-                detect_select=st.selectbox("select Genre from the list",['Action','Adventure','Comedy','Fantasy','Science Fiction','Crime','Thriller','Horror','Romance','TV Movie','Drama','Animation','Family','Western'],key=1)
+    if mode=='By Genre':
+            detect_select=st.selectbox("select Genre from the list",['Action','Adventure','Comedy','Fantasy','Science Fiction','Crime','Thriller','Horror','Romance','TV Movie','Drama','Animation','Family','Western'],key=1)
             button_detect=st.button('Click me',help='To detect language')                         
             if button_detect and detect_select:
                 bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
