@@ -57,14 +57,14 @@ if app_mode =='Movie Recommended System':
     st.title("Movie Recommended System")
 
     st.markdown("It will suggest you the relevant movie.")
-
-    Movie_name = st.text_input('Type the movie name')
-    button_translate=st.button('Click me',help='To suggest a relevant movie')
-    
     mode = st.radio(
     "",
     ("Movie name","By generes"),
-       )
+    )
+    if mode=='By Movie Name':
+        Movie_name = st.text_input('Type the movie name')
+        button_translate=st.button('Click me',help='To suggest a relevant movie')
+    
 
     if button_translate and Movie_name :
         bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
