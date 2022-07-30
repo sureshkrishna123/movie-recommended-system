@@ -39,7 +39,7 @@ if app_mode =='About Me':
     #st.image('images/wp4498220.jpg', use_column_width=True)
     st.markdown('''
               # About Me \n 
-                Hey this is ** N.V.Suresh Krishna **. \n
+                Hey this is N.V.Suresh Krishna. \n
                 
                 
                 Also check me out on Social Media
@@ -47,7 +47,6 @@ if app_mode =='About Me':
                 - [LinkedIn](https://www.linkedin.com/in/suresh-krishna-nv/)
                 - [Instagram](https://www.instagram.com/worldofsuresh._/)
                 - [Portfolio](https://sureshkrishna123.github.io/sureshportfolio/)\n
-                If you are interested in building more about Microsoft Azure then   [click here](https://azure.microsoft.com/en-in/)\n
                 ''')
 
 if app_mode =='Movie Recommended System':
