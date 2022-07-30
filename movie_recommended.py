@@ -40,7 +40,7 @@ st.sidebar.write('N.V.Suresh Krishna | sureshkrishnanv24@gmail.com https://githu
 if app_mode =='Movie Recommended System':
     
     
-    st.markdown("<h1 style='text-align: center; color: skyblue; '> Object Recognition </h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: skyblue; '> Movie Recommended System </h1>", unsafe_allow_html=True)
 
     st.title("Movie Recommended System")
 
