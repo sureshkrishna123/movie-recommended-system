@@ -162,7 +162,7 @@ if app_mode =='Movie Recommended System':
 
     if mode=='By Genre':
 
-        detect_select=st.selectbox("select Genre from the list",['Action','Adventure','Comedy','Fantasy','Science Fiction',' Crime','Thriller','Horror','Romance','TV Movie','Drama','Animation','Family','Western'],key=1)
+        detect_select=st.selectbox("select Genre from the list",['Action','Adventure','Comedy','Fantasy','Science Fiction','Crime','Thriller','Horror','Romance','TV Movie','Drama','Animation','Family','Western'],key=1)
         button_detect=st.button('Click me',help='To detect language')                         
         if button_detect and detect_select:
             bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
