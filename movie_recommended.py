@@ -155,8 +155,27 @@ if app_mode =='Movie Recommended System':
         st.text("Recommendations for "+Movie_name)
         st.text(get_recommendations(Movie_name))
 
-
+    if mode=='By Genre':
+        detect=st.text_input('Enter the text to detect (No language Restriction):')
+        detect_select=st.selectbox("select Genre from the list",['Action','Adventure','Comedy','Fantasy','Science Fiction',' Crime','Thriller','Horror','Romance','TV Movie','Drama','Animation','Family','Western'],key=1)
+        button_detect=st.button('Click me',help='To detect language')                         
+   
+    if button_detect and detect_select:
+        bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
+        moviepath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_movies.csv'
+        creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
+        movies_df = pd.read_csv(moviepath, error_bad_lines=False)
+        credits_df = pd.read_csv(creditpath, error_bad_lines=False)
+        credits_df.columns = ['id','title','cast','crew']
+        movies_df = movies_df.merge(credits_df, on="id")
+        movies_df.rename(columns = {'original_title':'title'}, inplace = True)
         
+        for detect_select in movies_df['genres']:
+            if 'Action' in detect_select:
+                indices =movies_df[movies_df['genres'] == i].index.values
+                movies = movies_df["title"].iloc[indices]
+        st.text(movies)
+
 
 
 
