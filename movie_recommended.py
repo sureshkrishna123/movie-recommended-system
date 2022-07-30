@@ -78,16 +78,16 @@ if app_mode =='Movie Recommended System':
             features = ["cast", "crew", "keywords", "genres"]
 
             for feature in features:
-            movies_df[feature] = movies_df[feature].apply(literal_eval)
+              movies_df[feature] = movies_df[feature].apply(literal_eval)
 
             def get_director(x):
-            for i in x:
+              for i in x:
                 if i["job"] == "Director":
                     return i["name"]
             return np.nan
 
             def get_list(x):
-            if isinstance(x, list):
+              if isinstance(x, list):
                 names = [i["name"] for i in x]
 
                 if len(names) > 3:
@@ -105,9 +105,9 @@ if app_mode =='Movie Recommended System':
         
         
             def clean_data(row):
-            if isinstance(row, list):
+              if isinstance(row, list):
                 return [str.lower(i.replace(" ", "")) for i in row]
-            else:
+              else:
                 if isinstance(row, str):
                     return str.lower(row.replace(" ", ""))
                 else:
@@ -138,15 +138,15 @@ if app_mode =='Movie Recommended System':
 
 
             def get_recommendations(title, cosine_sim=cosine_sim):
-            idx = indices[title]
-            similarity_scores = list(enumerate(cosine_sim[idx]))
-            similarity_scores= sorted(similarity_scores, key=lambda x: x[1], reverse=True)
-            similarity_scores= similarity_scores[1:11]
+              idx = indices[title]
+              similarity_scores = list(enumerate(cosine_sim[idx]))
+              similarity_scores= sorted(similarity_scores, key=lambda x: x[1], reverse=True)
+              similarity_scores= similarity_scores[1:11]
     # (a, b) where a is id of movie, b is similarity_scores
 
-            movies_indices = [ind[0] for ind in similarity_scores]
-            movies = movies_df["title"].iloc[movies_indices]
-            return movies
+              movies_indices = [ind[0] for ind in similarity_scores]
+              movies = movies_df["title"].iloc[movies_indices]
+              return movies
 
 
         
@@ -169,7 +169,7 @@ if app_mode =='Movie Recommended System':
         
             for genre in movies_df['genres']:
                 if detect_select in genre:
-                    indices =movies_df[movies_df['genres'] == detect_select].index.values
+                    indices =movies_df[movies_df['genres'] == genre].index.values
                     movies = movies_df["title"].iloc[indices]
             st.text(movies)
 
