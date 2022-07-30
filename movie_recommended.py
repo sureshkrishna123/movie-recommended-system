@@ -167,9 +167,9 @@ if app_mode =='Movie Recommended System':
             movies_df = movies_df.merge(credits_df, on="id")
             movies_df.rename(columns = {'original_title':'title'}, inplace = True)
         
-            for detect_select in movies_df['genres']:
-                if 'Action' in detect_select:
-                    indices =movies_df[movies_df['genres'] == i].index.values
+            for genre in movies_df['genres']:
+                if detect_select in genre:
+                    indices =movies_df[movies_df['genres'] == detect_select].index.values
                     movies = movies_df["title"].iloc[indices]
             st.text(movies)
 
