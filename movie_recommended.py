@@ -60,6 +60,11 @@ if app_mode =='Movie Recommended System':
 
     Movie_name = st.text_input('Type the movie name')
     button_translate=st.button('Click me',help='To suggest a relevant movie')
+    
+    mode = st.radio(
+    "",
+    ("About Me","Movie Recommended System"),
+       )
 
     if button_translate and Movie_name :
         bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
@@ -147,7 +152,7 @@ if app_mode =='Movie Recommended System':
 
 
         
-        st.text("Recommendations for"+ Movie_name)
+        st.text("Recommendations for "+Movie_name)
         st.text(get_recommendations(Movie_name))
 
 
