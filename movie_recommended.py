@@ -20,13 +20,13 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
-st.sidebar.header('A website using Azure Api')
-st.sidebar.markdown('Face Api,Translator Api')
+st.sidebar.header('A Movie Recommended Sysem Web app')
+
 
 
 app_mode = st.sidebar.radio(
     "",
-    ("About Me","Face Recognization","Object Detection","Translator"),
+    ("About Me","Movie Recommended System"),
 )
 
 
@@ -37,18 +37,17 @@ st.sidebar.write('N.V.Suresh Krishna | sureshkrishnanv24@gmail.com https://githu
 
 
 
-if app_mode =='Object Detection':
+if app_mode =='Movie Recommended System':
     
     
     st.markdown("<h1 style='text-align: center; color: skyblue; '> Object Recognition </h1>", unsafe_allow_html=True)
 
-    st.title("Object Recognition(Powered by Azure)")
+    st.title("Movie Recommended System")
 
-    st.markdown("Using Azure I build to **_Object_ detection** , it identify and analyse the image.")
-    st.text("Detect the objects in images")
+    st.markdown("It will suggest you the relevant movie.")
 
-    url_file =  title = st.text_input('Paste image address URL')
-    button_translate=st.button('Click me',help='To give the image')
+    Movie_name = st.text_input('Paste image address URL')
+    button_translate=st.button('Click me',help='To suggest a relevant movie')
 
     if button_translate and url_file :
         bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
@@ -136,8 +135,8 @@ if app_mode =='Object Detection':
 
 
         
-        st.text("Recommendations for"+url_file)
-        st.text(get_recommendations(url_file))
+        st.text("Recommendations for"+Movie_name)
+        st.text(get_recommendations(Movie_name))
 
 
         
