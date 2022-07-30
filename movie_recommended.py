@@ -59,7 +59,7 @@ if app_mode =='Movie Recommended System':
     st.markdown("It will suggest you the relevant movie.")
     mode = st.radio(
     "",
-    ("Movie name","By generes"),
+    ("By Movie Name","By generes"),
     )
     if mode=='By Movie Name':
         Movie_name = st.text_input('Type the movie name')
