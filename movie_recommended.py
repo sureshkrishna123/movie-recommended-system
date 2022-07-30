@@ -150,7 +150,7 @@ if app_mode =='Movie Recommended System':
             st.text("Recommendations for "+Movie_name)
             st.text(get_recommendations(Movie_name))
             st.text("##########################")
-            s.text("Enjoy the movie :)")
+            st.text("Enjoy the movie :)")
 
     if mode=='By Genre':
 
@@ -172,7 +172,7 @@ if app_mode =='Movie Recommended System':
                     movies = movies_df["title"].iloc[indices]
             st.text(movies)
             st.text("##########################")
-            s.text("Enjoy the movie :)")
+            st.text("Enjoy the movie :)")
 
 
 
