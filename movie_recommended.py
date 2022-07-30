@@ -53,7 +53,7 @@ if app_mode =='Movie Recommended System':
     
     
     st.markdown("<h1 style='text-align: center; color: skyblue; '> Movie Recommended System </h1>", unsafe_allow_html=True)
-
+    st.image(os.path.join('./images','Screenshot (85).png'),use_column_width=True )
     st.title("Movie Recommended System")
 
     st.markdown("It will suggest you the relevant movie.")
