@@ -57,8 +57,7 @@ if app_mode =='Movie Recommended System':
     st.title("Movie Recommended System")
 
     st.markdown("It will suggest you the relevant movie.")
-    st.text("Note: In this Data contains only 5000 Movie names. If you enter the name not in this 5000")
-    st.text("      it will show you an error")
+    st.text("Note: In this Data contains only 5000 Movie names. If you enter the name not in this 5000, it will show you an error")
     mode = st.radio(
     "",
     ("By Movie Name","By Genre"),
