@@ -63,7 +63,7 @@ if app_mode =='Movie Recommended System':
     
     mode = st.radio(
     "",
-    ("About Me","Movie Recommended System"),
+    ("Movie name","By generes"),
        )
 
     if button_translate and Movie_name :
