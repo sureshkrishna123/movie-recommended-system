@@ -73,7 +73,7 @@ if app_mode =='Movie Recommended System':
             #    time.sleep(20)
 
             bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
-            moviepath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_movies.csv'
+            moviepath = 'tmdb_5000_movies.csv'
             creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
             movies_df = pd.read_csv(moviepath, error_bad_lines=False)
             credits_df = pd.read_csv(creditpath, error_bad_lines=False)
@@ -170,7 +170,7 @@ if app_mode =='Movie Recommended System':
             button_detect=st.button('Click me',help='To detect language')                         
             if button_detect and detect_select:
                 bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
-                moviepath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_movies.csv'
+                moviepath = 'tmdb_5000_movies.csv'
                 creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
                 movies_df = pd.read_csv(moviepath, error_bad_lines=False)
                 credits_df = pd.read_csv(creditpath, error_bad_lines=False)
