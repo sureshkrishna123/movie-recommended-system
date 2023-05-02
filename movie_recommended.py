@@ -75,8 +75,8 @@ if app_mode =='Movie Recommended System':
             bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
             moviepath = 'tmdb_5000_movies.csv'
             creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
-            movies_df = pd.read_csv('tmdb_5000_movies.csv', error_bad_lines=False)
-            credits_df = pd.read_csv(creditpath, error_bad_lines=False)
+            movies_df = pd.read_csv('tmdb_5000_movies.csv')
+            credits_df = pd.read_csv(creditpath)
             credits_df.columns = ['id','title','cast','crew']
             movies_df = movies_df.merge(credits_df, on="id")
             movies_df.rename(columns = {'original_title':'title'}, inplace = True)
@@ -172,8 +172,8 @@ if app_mode =='Movie Recommended System':
                 bookpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/books.csv'
                 moviepath = 'tmdb_5000_movies.csv'
                 creditpath = 'https://raw.githubusercontent.com/noahjett/Movie-Goodreads-Analysis/master/tmdb_5000_credits.csv'
-                movies_df = pd.read_csv('tmdb_5000_movies.csv', error_bad_lines=False)
-                credits_df = pd.read_csv(creditpath, error_bad_lines=False)
+                movies_df = pd.read_csv('tmdb_5000_movies.csv')
+                credits_df = pd.read_csv(creditpath)
                 credits_df.columns = ['id','title','cast','crew']
                 movies_df = movies_df.merge(credits_df, on="id")
                 movies_df.rename(columns = {'original_title':'title'}, inplace = True)
